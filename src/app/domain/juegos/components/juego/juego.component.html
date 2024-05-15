@@ -1,0 +1,23 @@
+<div class="row">
+    @for (videojuego of videoJuegos; track videojuego) {
+    <div class="col-sm-12 col-md-4 col-lg-3 col-xl-2 border rounded">
+        <div class="row">
+            <div class="col center image" >
+                <img [style]="{
+                    'background-repeat': 'no-repeat',
+                    'object-fit': 'cover',
+                    'height': '140px'
+                }" [src]="videojuego.imagen" [alt]="videojuego.nombre" class="rounded">
+            </div>
+            <div class="col">
+                <h5>{{videojuego.nombre}}</h5>
+                <h3>{{videojuego.precio}}</h3>
+                <i>Release Data: {{videojuego.datosLanzamiento}}</i>
+                <br>
+                <i><b>Generos:</b> {{videojuego.nombreGenero.nombre}}</i>
+            </div>
+        </div>
+    </div>
+    }
+
+</div>
