@@ -19,6 +19,15 @@ const routes: Routes = [
         loadChildren: ()=>import('./domain/login/login.module').then(l=>l.LoginModule)
       }
     ]
+  },
+  {
+    path: '',
+    children:[
+      {
+        path:'DesarrolladoraDashboard',
+        loadChildren: ()=>import('./domain/desarrolladora/desarrolladora.module').then(t=>t.DesarrolladoraModule)
+      }
+    ]
   }
 ];
 

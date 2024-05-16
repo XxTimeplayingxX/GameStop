@@ -1,0 +1,29 @@
+<nav class="navbar bg-body-tertiary mb-3 row">
+  <div class="container navItems col">
+    <a class="navbar-brand" data-bs-toggle="offcanvas" href="#offcanvasExample"><i class="fa-solid fa-bars"></i></a>
+  </div>
+  <div class="container navItems col-1">
+    <i class="fa-solid fa-cart-shopping"></i>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Bienvenido</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <h5>Desarrolladora</h5>
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Acciones
+        </button>
+        <ul class="dropdown-menu">
+          <li (click)="moveToDesarrolladoraTable()"><a class="dropdown-item">DashBoard</a></li>
+          <li><a class="dropdown-item" href="#">Listar Desarrolladores</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

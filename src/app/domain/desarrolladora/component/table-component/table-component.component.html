@@ -1,0 +1,108 @@
+<div class="container my-3 d-flex justify-content-end">
+  <button
+    type="button"
+    class="btn btn-primary px-4"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal"
+  >
+    Agregar <i class="fa-solid fa-plus"></i>
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Agregar Desarrolladora
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="forms">
+          <div class="mb-3">
+            <label for="desarrolladora" class="form-label"
+              >Nombre de la Desarrolladora</label
+            >
+            <input 
+            formControlName="nombre"
+            type="text" class="form-control" id="desarrolladora" />
+          </div>
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input 
+            formControlName="descripcion"
+            type="text" class="form-control" id="descripcion" />
+          </div>
+          <div class="mb-3">
+            <label for="imagen" class="form-label">Imagen</label>
+            <input 
+            formControlName="imagen"
+            type="text" class="form-control" id="imagen" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+        <button type="submit" class="btn btn-primary" (click)="postDatos()">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container border rounded">
+  <table class="table">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Imagen</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (desarrolladora of Desarrolladora; track desarrolladora) {
+      <tr>
+        <th scope="row">{{ desarrolladora.nombre }}</th>
+        <td>
+          <p>{{ desarrolladora.descripcion }}</p>
+        </td>
+        <td>
+          <img
+            [style]="{
+              'background-repeat': 'no-repeat',
+              'object-fit': 'cover',
+              height: '140px',
+              width: '180px'
+            }"
+            [src]="desarrolladora.imagen"
+            [alt]="desarrolladora.nombre"
+          />
+        </td>
+        <td>
+          <div class="options">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

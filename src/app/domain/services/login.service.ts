@@ -18,6 +18,7 @@ export class LoginService {
       const headers = response.headers;
 
       console.log(body.token);
+      console.log(body.expires);
 
       localStorage.setItem('Token', body.token);
 
